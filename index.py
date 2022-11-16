@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect
-import sqlite3 as sq3
 import requests
-import mariadb
+import mysql.connector as mariadb
+from mysql.connector import Error
 
 user = None
 
@@ -126,7 +126,7 @@ def redire():
             global error
             error = 1
             return redirect("/login")
-    except mariadb.Error as e:
+    except Error as e:
         return str(e)
     else:
         conn.commit()
