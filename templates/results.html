@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style> html{
+        border: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("{{url_for('static', filename='abstract-blue-background-simple-design-for-your-website-free-vector.webp')}}");
+        background-size: cover;
+    }
+    body{
+        margin: 0;
+        border: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+    .div{
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    .result{
+        font-family: 'Lato', sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .navi{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        color: whitesmoke;
+    }
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    a:hover{
+        color:plum;
+    }
+
+    </style>
+       
+</head>
+<body>
+    <div class="div">
+        <div class="result">
+            {{ result }}
+        </div>
+        
+        <div class="navi">
+            <a href="entryform">Go Back To Entry Form</a> 
+        </div>
+    </div>
+    
+</body>
+</html>

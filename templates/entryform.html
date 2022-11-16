@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        html{
+        border: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("{{url_for('static', filename='doctor-looks-kidney-hologram-checks-test-result-virtual-interface-analyzes-data-kidney-disease-stones-innovative-technologies-medicine-future_99433-6534.webp')}}");
+        background-size: cover;
+        }
+        body{
+            border: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .header{
+            height: 20%;
+            width: 100%;
+        }
+        .body{
+            height: 80%;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inputs{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .s-input{
+            width: 150px;
+            display: block;
+            margin: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            border: red solid;
+            font-family: 'Lato', sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+            color: #392968;
+        }
+        .post-btn{
+            display: block;
+            padding: 8px 8px 8px 8px;
+            margin: 8px 8px 16px 8px;
+            border-radius: 5px;
+            border: #30D5C8 solid;
+            width:auto;
+            font-family: 'PT Sans', sans-serif;
+            font-weight: bolder;
+            color: #392968;
+            font-size: 18px;
+        }
+        .post-btn:hover{
+            border: white solid;
+            color: white;
+            background-color: #30D5C8;
+        }
+        ::placeholder{
+            color: #a9a9a9;
+        }
+        .items{
+            padding: 8px;
+            background-color: white;
+            width: 150px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .items:hover{
+            background-color: red;
+            color: white;
+        }
+        .hid{
+            position: absolute;
+            top:100%;
+            visibility: hidden;
+        }
+        .drop:focus + .hid{
+            visibility: visible;
+        }
+        .hid:hover{
+            visibility: visible;
+        }
+        .h-input{
+            width: 166px;
+            display: block;
+            margin: 0 5px 5px 5px;
+            border-radius: 6px;
+            border: red solid;
+            font-family: 'Lato', sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+            color: #392968;
+            background-color: white;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <form action="results" method="post" class="body">
+        <div class="inputs">
+            <input step="any" required name="bp" type="number" class="s-input" placeholder="Blood Pressure">
+            <input step="any" required name="bu" type="number" class="s-input" placeholder="Blood Urea">
+
+            <!-- <select name="dm" class="s-input select">
+                <option value="" selected disabled>Diabetes Mellitus</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select> -->
+
+            <div style="position: relative;">
+                <input name="dm" type="text" class="drop drop-2 s-input select" readonly required placeholder="Diabetes Mellitus">
+                <div class="hid h-input">
+                    <div class="items items-2">Yes</div>
+                    <div class="items items-2">No</div>
+                </div>
+            </div>
+
+            <input step="any" required name="hemo" type="number" class="s-input" placeholder="Hemoglobin">
+
+            <!-- <select name="htn" class="s-input select">
+                <option value="" selected disabled>Hypertension</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select> -->
+
+            <div style="position: relative;">
+                <input name="htn" type="text" class="drop drop-1 s-input select" readonly required placeholder="Hypertension">
+                <div class="hid h-input">
+                    <div class="items items-1">Yes</div>
+                    <div class="items items-1">No</div>
+                </div>
+            </div>
+
+            <!-- <select name="pc" class="s-input select">
+                <option value="" selected disabled>Pus Cell</option>
+                <option value="0">Normal</option>
+                <option value="1">Abnormal</option>
+            </select> -->
+
+            <div style="position: relative;">
+                <input name="pc" type="text" class="drop drop-3 s-input select" readonly required placeholder="Pus Cell">
+                <div class="hid h-input">
+                    <div class="items items-3">Normal</div>
+                    <div class="items items-3">Abnormal</div>
+                </div>
+            </div>
+
+            <input step="any" required name="pcv" type="number" class="s-input" placeholder="Packed Cell Volume">
+
+            <!-- <select name="pe" class = "s-input select">
+                <option value="" selected disabled >Pedal Edema</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select> -->
+
+            <div style="position: relative;">
+                <input name="pe" type="text" class="drop drop-4 s-input select" readonly required placeholder="Pedal Edema">
+                <div class="hid h-input">
+                    <div class="items items-4">Yes</div>
+                    <div class="items items-4">No</div>
+                </div>
+            </div>
+
+            <input step="any" required name="rc" type="number" class="s-input" placeholder="Red Blood Cells Count">
+            <input step="any" required name="sg" type="number" class="s-input" placeholder="Specific Gravity">
+        </div>
+        <button class="post-btn" >Get Results</button>
+    </form>
+    <script>
+        items1 = document.querySelectorAll(".items-1")
+        drop1 = document.querySelector(".drop-1")
+        items1.forEach(element => {
+            element.addEventListener("click",()=>{
+                drop1.value = element.innerHTML
+            })
+        });
+
+        items2 = document.querySelectorAll(".items-2")
+        drop2 = document.querySelector(".drop-2")
+        items2.forEach(element => {
+            element.addEventListener("click",()=>{
+                drop2.value = element.innerHTML
+            })
+        });
+
+        items3 = document.querySelectorAll(".items-3")
+        drop3 = document.querySelector(".drop-3")
+        items3.forEach(element => {
+            element.addEventListener("click",()=>{
+                drop3.value = element.innerHTML
+            })
+        });
+
+        items4 = document.querySelectorAll(".items-4")
+        drop4 = document.querySelector(".drop-4")
+        items4.forEach(element => {
+            element.addEventListener("click",()=>{
+                drop4.value = element.innerHTML
+            })
+        });
+    </script>
+</body>
+</html>

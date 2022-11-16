@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+    html{
+        border: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("{{url_for('static', filename='clean-medical-background_53876-116875.webp')}}");
+        background-size: cover;
+    }
+    .header{
+        color: #392968;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Lato', sans-serif;
+    }
+    .box{
+        width: 300px;
+        margin: auto auto auto auto;
+        border-radius: 50px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    body{
+        border: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .inner-box{
+        width: 250px;
+        margin: auto;
+    }
+    .lil{
+        padding: 8px;
+        margin: 10px;
+        border-radius: 5px;
+        border: #30D5C8 solid;
+        width: 200px;
+        font-family: 'Lato', sans-serif;
+        font-weight: bolder;
+        color: #392968;
+        font-size: 18px;
+    }
+    .li{
+        border-radius: 5px;
+        padding: 8px;
+        margin: 10px 10px 20px 10px;
+        background-color: white;
+        border: 3px turquoise solid;
+        color: #392968;
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+        font-weight: bolder;
+        
+    }
+
+
+    .li:hover{
+        border-radius: 5px;
+        border:3px white solid;
+        background-color: #30D5C8;
+        color: white;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    .link{
+        color: #392968;
+        font-size: 20px;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bolder;
+    }
+    .hes{
+        color: #392968;
+        font-size: 22px;
+        margin-bottom: 8px;
+        font-family: 'Lato', sans-serif;
+        font-weight: bolder;
+    }
+    .error{
+        position: absolute;
+        bottom: 0;
+        border: 3px solid red;
+        color: red;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: white;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .none{
+        visibility: hidden;
+    }
+</style>
+<body>
+    {% if date %}
+    <div class="error" >{{ message }}</div>
+    {% endif %}
+   <div class="header">
+        <p>Chronic Kidney Disease Detector</p>
+   </div> 
+   <div class = "box">
+        <form action="testing2" method="post" class="inner-box">
+            <div class="hes">Login</div>
+            <input  class = "lil" name="email" type="email" required placeholder="Email Address">
+            <input  class = "lil" name="password" type="password" required placeholder="Password">
+            <button class = "li" >Sign in</button>
+        </form>
+        <a class = "link" href="registration">Go to Registration Page</a>
+    </div>
+    <script>
+        setTimeout(()=>{
+            error = document.querySelector(".error")
+            if (error){
+            error.classList.add("none")}
+        },5000)
+    </script>
+</body>
+</html>
